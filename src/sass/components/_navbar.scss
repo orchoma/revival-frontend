@@ -1,0 +1,204 @@
+.navbar{
+    background-color: rgb(90, 108, 96);
+    z-index: 1000;
+    display: flex;
+    flex-direction: row;
+    position: absolute;
+    position: fixed;
+    height: 100px;
+    align-items: center;
+
+
+}
+
+
+
+.my-nav{
+    list-style-type: none;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+
+
+
+    @include respond(tab-land){
+        display: none;
+    }
+
+};
+
+
+.nav-start{
+    display: flex;
+    margin-left: 2rem;
+    align-items: center;
+
+}
+
+
+.nav-end{
+    display: flex;
+    align-items: center;
+    margin-right: 6rem;
+
+}
+
+.nav-link{
+    color:rgb(255, 255, 255);
+    font-size: 2.3rem;
+
+    &:hover{
+        color: rgb(53, 71, 63);
+    }
+}
+
+
+
+.schmaltz-logo{
+    width: 20rem;
+    margin-left: 1rem;
+
+
+
+    @include respond(tab-land){
+        width: 20rem;
+        padding-top: 1rem;
+        margin-left: 10rem;
+
+
+    }
+
+};
+
+
+.sticky{
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+.stick-2{
+    position: fixed;
+}
+
+
+
+.nav-mobile {
+
+    z-index: 4100;
+    display: flex;
+    align-items: center;
+    padding-top: .5rem;
+
+    &__checkbox{
+        display: none;
+    }
+    
+    &__checkbox:checked ~ &__nav{
+        opacity: 1;
+        width: 100%;
+
+    }
+
+    &__checkbox:checked + &__button &__icon{
+        background-color: transparent;
+    }
+
+    &__checkbox:checked + &__button &__icon::before{
+        top: 0;
+        transform: rotate(135deg);
+    }
+
+    &__checkbox:checked + &__button &__icon::after{
+        top: 0;
+        transform: rotate(-135deg);
+    }
+
+
+
+    &__background{
+        opacity: 0;
+        background-color: rgb(0, 0, 0);
+        transition: all .3s;
+    }
+
+    &__checkbox:checked ~ &__background{
+        opacity: 1;
+        transform: scale(1500);
+        z-index: 3000;
+
+
+    }
+
+    &__button{
+        background-color: transparent;
+        height: 7rem;
+        width: 7rem;
+        position: fixed;
+        top: 4.5rem;
+        right: 10rem;
+        z-index: 4000;
+        cursor: pointer;
+
+    }
+
+    &__icon{
+        position: relative;
+
+        &,
+        &::before,
+        &::after{
+            width: 4rem;
+            height: 2.5px;
+            background-color: rgb(255, 255, 255);
+            display: inline-block;
+        }
+        
+        &::before,
+        &::after{
+            content: "";
+            position: absolute;
+            left: 0;
+            transition: all .2s;
+        }
+
+        &::before{ top: -.8rem;}
+        &::after {top: .8rem;}
+    }
+
+    &__nav{
+        height: 100vh;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 3000;
+        opacity: 0;
+        width: 0;
+        transition: all .8s cubic-bezier(0.68, -0.6, 0.32, 1.6);
+
+    }
+
+    &__list{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        list-style: none;
+        text-align: center;
+        width: 100%;
+
+    }
+
+
+    @include respond(tab-land-min){
+        display: none;
+    }
+
+
+    @include respond(big-desktop){
+        display: none;
+    }
+
+}
+

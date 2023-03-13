@@ -1,0 +1,46 @@
+.feature{
+    background-color: rgb(255, 255, 255);
+    margin-top: 10rem;
+    padding-left: 6rem;
+    padding-right: 6rem;
+
+    @include respond(tab-port) {
+        padding: 8rem 0 0rem 0;
+    }
+
+    &__title{
+        font-size: 4rem;
+        padding: 1rem;
+        color: rgb(120, 126, 123);
+    }
+
+
+}
+
+
+.feature-2{
+    background-color: rgb(255, 255, 255);
+    padding:  3rem 15rem 3rem ;
+
+    @include respond(tab-port) {
+        padding: 8rem 0 0rem 0;
+    }
+
+
+}
+
+
+
+
+.feature-heading{
+
+
+    @include respond(tab-port) {
+        text-align: center;
+        margin-right: 5rem;
+    }
+}
+
+.searched-feature{
+    padding-top: 5rem;
+}

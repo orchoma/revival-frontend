@@ -1,0 +1,15 @@
+.my-banner{
+    position: relative;
+    background-position: center;
+    background-size: cover;
+    height: 100vh;
+    overflow: hidden;
+
+}
+
+.small-banner{
+    position: relative;
+    background-color: pink;
+    height: 10vh;
+    z-index: 5000;
+}
